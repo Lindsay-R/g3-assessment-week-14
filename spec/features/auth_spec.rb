@@ -15,5 +15,20 @@ feature 'Auth' do
     click_on "Login"
     expect(page).to have_content("user@example.com")
   end
+  scenario 'Users can see a patient prescriptions' do
+    create_user email: "user@example.com"
+
+    visit root_path
+
+    fill_in "Email", with: "user@example.com"
+    fill_in "Password", with: "password"
+    click_on "Login"
+    expect(page).to have_content("user@example.com")
+
+
+
+
+
+  end
 
 end

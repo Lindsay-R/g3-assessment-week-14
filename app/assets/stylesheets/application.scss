@@ -94,3 +94,18 @@ main {
     }
   }
 }
+
+.prescription-form div{
+  margin-bottom: 25px;
+}
+.errors {
+  color: darkred;
+  margin-bottom: 1em;
+}
+
+.flash_notice {
+  text-align: center;
+  color: yellowgreen;
+  height: 40px;
+  padding-top: 10px;
+}

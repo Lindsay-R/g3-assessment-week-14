@@ -1,0 +1,43 @@
+<h2>Add a subscription to <%= @patient.first_name%> <%= @patient.last_name%></h2>
+
+<%= form_for [@patient, @prescription], html: { class: "prescription-form" } do |f| %>
+
+
+  <% f.object.errors.full_messages.each do |error| %>
+    <div class="errors">
+      <%= error %>
+    </div>
+  <% end %>
+
+
+
+  <div>
+    <%= select(:prescription, :medication_id, @medications.all.collect {|m| [ m.name, m.id ] }) %>
+  </div>
+
+  <div>
+    <%= f.label :Dosage %>
+    <%= f.text_field :dosage %>
+  </div>
+
+  <div>
+    <%= f.label :Schedule %>
+    <%= f.text_field :schedule %>
+  </div>
+
+  <div>
+    <%= f.label :Starts_on %>
+    <%= f.date_select :date_start %>
+  </div>
+
+  <div>
+    <%= f.label :Starts_on %>
+    <%= f.date_select :date_end %>
+  </div>
+
+
+  <div>
+    <%= f.submit "Create Prescription"  %>
+  </div>
+
+<% end %>
